@@ -446,13 +446,13 @@ h6,.h6{font-size:1.1rem;}
 /* Table */
 
 div.tab-name a.nav-link {
-	background-image: url(../images/icons/table-light.svg);
+	background-image: url(//recoverytoolbox.com/src/images/icons/table-light.svg);
 	color: #252559;
 	font-weight: 700;
 }
 
 div.tab-name a.nav-link.active {
-	background-image: url(../images/icons/table-light-while.svg);
+	background-image: url(//recoverytoolbox.com/src/images/icons/table-light-while.svg);
 	background-color: #252559
 }
 
@@ -503,4 +503,24 @@ table.table-preview tbody tr:nth-of-type(odd) {
 .shadow-md {
 	-webkit-box-shadow: 0 0 15px rgb(0 0 0 / 10%);
 	box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+}
+
+/* ostpst preview */
+.data-preview {
+	font-size: 14px;
+}
+.data-preview ol {
+	list-style: none;
+}
+li.expanded span, li.normal span {
+	font-weight: 700;
+}
+li.expanded::before, li.normal::before {
+	content: url(//recoverytoolbox.com/src/images/icons/folder-open.png);
+	width: 16px;
+	height: 14px;
+	margin: 5px;
+}
+li.normal::before {
+	content: url(//recoverytoolbox.com/src/images/icons/file.png);
 }
