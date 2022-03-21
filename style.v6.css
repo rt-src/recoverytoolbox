@@ -21,16 +21,11 @@ header .nav-link:hover,.dropdown-item:hover{color:#005d8d!important}
 .product-menu img{vertical-align:sub}
 .product-menu .nav-link{padding:.2rem .3rem!important}
 
-/*.logoblock */
-@media (max-width:425px){.google-none-mobile{display:none}}
-@media (max-width:991px){.logoblock{width:170px;height:42px;margin:0 10px}}
-@media (min-width:992px){.logoblock{width:255px;height:63px}}
+
 
 
 /* iphone */
-@media screen and (max-device-width:425px){
-.logoblock{width:170px;height:42px}.google-none-mobile{display:none}
-}
+
 
 
 /* google SEARCH */
@@ -56,8 +51,6 @@ header .nav-link:hover,.dropdown-item:hover{color:#005d8d!important}
 .gsc-results-wrapper-visible .gsc-inline-block,.gsc-results-wrapper-visible .gsc-tabHeader .gsc-inline-block .gsc-tabhActive{-webkit-box-sizing:content-box!important;box-sizing:content-box!important}
 .gsc-webResult{border-collapse:inherit!important}
 .gsc-input{font-size:0!important}
-@media screen and (min-width:0\0) and (-webkit-min-device-pixel-ratio:0), screen and (min-width:0\0) and (-o-min-device-pixel-ratio:0/1), screen and (min-width:0\0) and (min-resolution:0.001dpcm){.ie9{display:none}}
-@media all and (-ms-high-contrast:none){.rt-review-user-rate i{margin:0 0 -1px 1px}.rt-review-user-rate i,::-ms-backdrop{margin:0 0 -1px 1px}}
 .gsc-result table{border-collapse:inherit!important}
 /* google SEARCH */
 
@@ -71,46 +64,7 @@ h4,.h4{font-size:1.3rem;}
 h5,.h5{font-size:1.2rem;}
 h6,.h6{font-size:1.1rem;}
 /* Resoposible */
-@media (max-width:575px){ /* col */
-.test{color:purple}
-h1,.h1{font-size:1.25rem;}
-h2,.h2{font-size:1.2rem;}
-h3,.h3{font-size:1.15rem;}
-h4,.h4{font-size:1.1rem;}
-h5,.h5{font-size:1.05rem;}
-h6,.h6{font-size:1rem;}
-.product-menu{padding:0.1rem 0}
-}
-@media (min-width:576px){ /* sm */
-.test{color:black}
-h1,.h1{font-size:1.3rem;}
-h2,.h2{font-size:1.25rem;}
-h3,.h3{font-size:1.2rem;}
-h4,.h4{font-size:1.15rem;}
-h5,.h5{font-size:1.1rem;}
-h6,.h6{font-size:1.05rem;}
-.product-menu{padding:0.1rem 0}
-}
-@media (min-width:768px){ /* md */
-.test{color:black}
-footer{margin-bottom:58px}
-}
-@media (min-width:992px){ /* lg */
-.fixed-bottom{height:80px}
-}
-@media (min-width:1200px){ /* xl */
-footer{margin-bottom:80px}
-.test{color:blue}
-h1,.h1{font-size:1.6rem;}
-h2,.h2{font-size:1.5rem;}
-h3,.h3{font-size:1.4rem;}
-h4,.h4{font-size:1.3rem;}
-h5,.h5{font-size:1.2rem;}
-h6,.h6{font-size:1.1rem;}
-}
-@media (min-width:1400px){ /* xxl */
-.test{color:red}
-}
+
 
 .fb_iframe_widget span{
 height:21px!important;
@@ -179,11 +133,9 @@ display: flex;
 color:#fff;
 background-color:#161635;
 }
-@media (min-width: 768px) {
-.progress {
-height:100%
-}
-}
+
+
+
 /* WIDGET-end */
 
 /* stars */
@@ -432,4 +384,56 @@ line-height: 20px;
 text-align: center;
 display: inline-block;
 margin-bottom: 0;
+}
+
+@media screen and (max-device-width:425px){.logoblock{width:170px;height:42px}.google-none-mobile{display:none}}
+@media screen and (min-width:0\0) and (-webkit-min-device-pixel-ratio:0), screen and (min-width:0\0) and (-o-min-device-pixel-ratio:0/1), screen and (min-width:0\0) and (min-resolution:0.001dpcm){.ie9{display:none}}
+@media all and (-ms-high-contrast:none){.rt-review-user-rate i{margin:0 0 -1px 1px}.rt-review-user-rate i,::-ms-backdrop{margin:0 0 -1px 1px}}
+@media (max-width:425px){
+.google-none-mobile{display:none}
+}
+@media (max-width:991px){
+.logoblock{width:170px;height:42px;margin:0 10px}
+}
+@media (max-width:575px){ /* col */
+.test{color:purple}
+h1,.h1{font-size:1.25rem;}
+h2,.h2{font-size:1.2rem;}
+h3,.h3{font-size:1.15rem;}
+h4,.h4{font-size:1.1rem;}
+h5,.h5{font-size:1.05rem;}
+h6,.h6{font-size:1rem;}
+.product-menu{padding:0.1rem 0}
+}
+@media (min-width:576px){ /* sm */
+.test{color:black}
+h1,.h1{font-size:1.3rem;}
+h2,.h2{font-size:1.25rem;}
+h3,.h3{font-size:1.2rem;}
+h4,.h4{font-size:1.15rem;}
+h5,.h5{font-size:1.1rem;}
+h6,.h6{font-size:1.05rem;}
+.product-menu{padding:0.1rem 0}
+}
+@media (min-width:768px){ /* md */
+.test{color:black}
+footer{margin-bottom:58px}
+.progress {height:100%}
+}
+@media (min-width:992px){ /* lg */
+.fixed-bottom{height:80px}
+.logoblock{width:255px;height:63px}
+}
+@media (min-width:1200px){ /* xl */
+footer{margin-bottom:80px}
+.test{color:blue}
+h1,.h1{font-size:1.6rem;}
+h2,.h2{font-size:1.5rem;}
+h3,.h3{font-size:1.4rem;}
+h4,.h4{font-size:1.3rem;}
+h5,.h5{font-size:1.2rem;}
+h6,.h6{font-size:1.1rem;}
+}
+@media (min-width:1400px){ /* xxl */
+.test{color:red}
 }
