@@ -96,7 +96,7 @@ h6,.h6{font-size:1.05rem;}
 footer{margin-bottom:58px}
 }
 @media (min-width:992px){ /* lg */
-.fixed-bottom{width:80px}
+.fixed-bottom{height:80px}
 }
 @media (min-width:1200px){ /* xl */
 footer{margin-bottom:80px}
