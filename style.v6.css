@@ -64,6 +64,12 @@ header .nav-link:hover,.dropdown-item:hover{color:#005d8d!important}
 /* header */
 
 
+h1,.h1{font-size:1.6rem;}
+h2,.h2{font-size:1.5rem;}
+h3,.h3{font-size:1.4rem;}
+h4,.h4{font-size:1.3rem;}
+h5,.h5{font-size:1.2rem;}
+h6,.h6{font-size:1.1rem;}
 /* Resoposible */
 @media (max-width:575px){ /* col */
 .test{color:purple}
@@ -90,6 +96,7 @@ h6,.h6{font-size:1.05rem;}
 footer{margin-bottom:58px}
 }
 @media (min-width:992px){ /* lg */
+.fixed-bottom{width:80px}
 }
 @media (min-width:1200px){ /* xl */
 footer{margin-bottom:80px}
@@ -350,7 +357,7 @@ padding: 10px 20px;
 border-left: 5px solid #990d10;
 margin: 0.5rem 1rem;
 }
-.fixed-bottom{background-color:#ebebeb}
+.fixed-bottom{background-color:#ebebeb;height:58px}
 .rt-footer{
 background-color:#0d014b;
 text-align:center;
