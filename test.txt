@@ -30,10 +30,41 @@ last:
 
 
 
-C:\Users\kyrgy\Desktop\newBt\final\access\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\coreldraw\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\dbf\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\dwg\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\excel\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\illustrator\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\osttopst\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\outlook\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\outlookexpress\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\pdf\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\photoshop\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\powerpoint\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\project\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\word\ru\result.html
-
-delete this:  class="float-lg-end d-none d-lg-block" 
-
-index: <div class="col-md-10 mx-auto"> --> <div class="col-10 mx-auto">
+C:\Users\kyrgy\Desktop\newBt\final\access\it\,C:\Users\kyrgy\Desktop\newBt\final\coreldraw\it\,C:\Users\kyrgy\Desktop\newBt\final\dbf\it\,C:\Users\kyrgy\Desktop\newBt\final\dwg\it\,C:\Users\kyrgy\Desktop\newBt\final\excel\it\,C:\Users\kyrgy\Desktop\newBt\final\illustrator\it\,C:\Users\kyrgy\Desktop\newBt\final\osttopst\it\,C:\Users\kyrgy\Desktop\newBt\final\outlook\it\,C:\Users\kyrgy\Desktop\newBt\final\outlookexpress\it\,C:\Users\kyrgy\Desktop\newBt\final\pdf\it\,C:\Users\kyrgy\Desktop\newBt\final\photoshop\it\,C:\Users\kyrgy\Desktop\newBt\final\powerpoint\it\,C:\Users\kyrgy\Desktop\newBt\final\project\it\,C:\Users\kyrgy\Desktop\newBt\final\word\it\
 
 
+
+--------------------------------------------
+---- Ручной ввод для критического стиля ----
+--------------------------------------------
+
+CH: 
+.w-fb-like-ch, .fb-like{width:150px!important;height:28px} .w-lang-menu-ch{width:87px}
+
+EN: 
+.w-fb-like-en, .fb-like{width:150px!important;height:28px}.w-lang-menu-en{width:87px}
+
+DE:
+.w-fb-like-de, .fb-like{width:180px!important;height:28px}.w-lang-menu-de{width:101px}
+
+FR:
+.w-fb-like-fr, .fb-like{width:180px!important;height:28px}.w-lang-menu-fr{width:101px}
+
+PT:
+.w-fb-like-pt, .fb-like{width:180px!important;height:28px}.w-lang-menu-pt{width:101px}
+
+ES:
+.w-fb-like-es, .fb-like{width:220px!important;height:28px}.w-lang-menu-es{width:89px}
+
+IT:
+.w-fb-like-it, .fb-like{width:220px!important;height:28px}.w-lang-menu-it{width:89px}
+
+NL:
+.w-fb-like-nl, .fb-like{width:203px!important;height:28px}.w-lang-menu-nl{width:107px}
+
+RU:
+.w-fb-like-ru, .fb-like{width:245px!important;height:28px}.w-lang-menu-ru{width:91px}
+
+--------------------------------------------
+---- Ручной ввод для критического стиля ----
+--------------------------------------------

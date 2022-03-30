@@ -2,6 +2,8 @@
 a{text-decoration:none;}
 .rt-text-blue{color:#007ab8}
 .rt-text-darkblue{color:#004a6e}
+.mobile-dropdown{position:absolute!important}
+.fixed-height-buttons{height:28px}
 
 /* header */
 /* NAV-LINK */
@@ -67,9 +69,7 @@ h6,.h6{font-size:1.1rem;}
 /* Resoposible */
 
 
-.fb_iframe_widget span{
-height:21px!important;
-}
+
 
 /* Resoposible */
 
@@ -85,6 +85,9 @@ border-bottom: 3px solid #ebebeb;
 color: #000;
 font-weight: 600;
 }
+
+.widget-height{height:403px;overflow:hidden}
+@media (max-width:767px){.widget-height{height:531px}}
 
 label {
 display: inline-block;
@@ -340,24 +343,14 @@ text-indent: -9999px;
 background: url(//recoverytoolbox.com/src/images/icons/icon-top.png) no-repeat;
 }
 
-.w-fb-like-ch{width:150px!important}
-.w-lang-menu-ch{min-width:87px}
-.w-fb-like-en{width:150px!important}
-.w-lang-menu-en{min-width:87px}
-.w-fb-like-de{width:180px!important}
-.w-lang-menu-de{min-width:101px}
-.w-fb-like-fr{width:180px!important}
-.w-lang-menu-fr{min-width:101px}
-.w-fb-like-pt{width:180px!important}
-.w-lang-menu-pt{min-width:101px}
-.w-fb-like-es{width:220px!important}
-.w-lang-menu-es{min-width:89px}
-.w-fb-like-it{width:220px!important}
-.w-lang-menu-it{min-width:89px}
-.w-fb-like-nl{width:203px!important}
-.w-lang-menu-nl{min-width:107px}
-.w-fb-like-ru{width:225px!important}
-.w-lang-menu-ru{min-width:91px}
+.w-fb-like, .fb-like{width:225px!important;height:28px}
+.w-lang-menu{width:107px}
+
+
+.fb_iframe_widget span{
+height:21px!important;
+}
+
 
 .credit-card{background-image:url(//recoverytoolbox.com/src/images/icons/credit-card-solid.svg)}
 .credit-card:hover{background-image:url(//recoverytoolbox.com/src/images/icons/credit-card-solid-gr.svg)}
@@ -396,7 +389,7 @@ margin-bottom: 0;
 @media (max-width:991px){
 .logoblock{width:170px;height:42px;margin:0 10px}
 .fixed-bottom{height:58px}
-.site-menu{min-width:initial}
+.site-menu{width:initial}
 }
 @media (max-width:575px){ /* col */
 .test{color:purple}
