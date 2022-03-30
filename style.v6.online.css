@@ -343,14 +343,14 @@ text-indent: -9999px;
 background: url(//recoverytoolbox.com/src/images/icons/icon-top.png) no-repeat;
 }
 
+
+.w-fb-like{overflow:hidden}
 .w-fb-like, .fb-like{width:225px!important;height:28px}
 .w-lang-menu{width:107px}
-
-
-.fb_iframe_widget span{
-height:21px!important;
+.fb_iframe_widget iframe{
+	height:28px!important;
+	width:225px!important;
 }
-
 
 .credit-card{background-image:url(//recoverytoolbox.com/src/images/icons/credit-card-solid.svg)}
 .credit-card:hover{background-image:url(//recoverytoolbox.com/src/images/icons/credit-card-solid-gr.svg)}
@@ -359,6 +359,10 @@ height:21px!important;
 
 .rt-work .steps {
 margin-right: 5px;
+}
+
+.steps p{
+margin-top: 10px;
 }
 
 .steps {
