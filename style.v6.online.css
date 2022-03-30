@@ -389,7 +389,7 @@ margin-bottom: 0;
 @media (max-width:991px){
 .logoblock{width:170px;height:42px;margin:0 10px}
 .fixed-bottom{height:58px}
-.site-menu{width:initial}
+.site-menu{min-width:initial}
 }
 @media (max-width:575px){ /* col */
 .test{color:purple}
