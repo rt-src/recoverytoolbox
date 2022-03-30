@@ -19,3 +19,21 @@ last:
 	bugget: <link rel="preload" href="https://cdn.jsdelivr.net/npm/baguettebox.js@1.11.1/dist/baguetteBox.min.css" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 	fancy: <link rel="preload" href="https://cdn.jsdelivr.net/gh/rt-src/recoverytoolbox@947392526bc7ce6c5a308b92b9869a279737d67b/fancybox.min.css" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+	fail: https://cdn.jsdelivr.net/gh/rt-src/recoverytoolbox@5247c207d9bfc63aee0540b3b8e1ea8f30ea39b8/fail-min.js
+
+	common: <script src="https://cdn.jsdelivr.net/gh/rt-src/recoverytoolbox@0e332a27f24c06da40c343264fcad9e5f47eded1/common-min.js"></script>
+
+	wizard: <script defer src="https://cdn.jsdelivr.net/gh/rt-src/recoverytoolbox@0e332a27f24c06da40c343264fcad9e5f47eded1/wizard-min.js"></script>
+
+	repair: <script defer src="https://cdn.jsdelivr.net/gh/rt-src/recoverytoolbox@0e332a27f24c06da40c343264fcad9e5f47eded1/repair-min.js"></script>
+
+
+
+C:\Users\kyrgy\Desktop\newBt\final\access\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\coreldraw\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\dbf\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\dwg\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\excel\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\illustrator\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\osttopst\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\outlook\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\outlookexpress\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\pdf\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\photoshop\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\powerpoint\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\project\ru\result.html,C:\Users\kyrgy\Desktop\newBt\final\word\ru\result.html
+
+delete this:  class="float-lg-end d-none d-lg-block" 
+
+index: <div class="col-md-10 mx-auto"> --> <div class="col-10 mx-auto">
+
+
