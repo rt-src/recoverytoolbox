@@ -75,7 +75,7 @@ getResultInfo = (fileId) => {
                         if (typeof previewJson.Tables !== 'undefined') {
                             var leftPanel = document.getElementById("v-pills-tab");
                             leftPanelInnerHTML = ``
-                            for (const tableKey in previewJson.Tables) {
+                            for (var tableKey in previewJson.Tables) {
                                 if (Object.hasOwnProperty.call(previewJson.Tables, tableKey)) {
                                     const table = previewJson.Tables[tableKey];
                                     var indx = Object.keys(previewJson.Tables).indexOf(tableKey);
@@ -87,7 +87,7 @@ getResultInfo = (fileId) => {
                             var tableContent = document.getElementById("v-pills-tabContent");
                             var tablesStrings = [];
                             var colCnt = 0;
-                            for (const tableKey in previewJson.Tables) {
+                            for (var tableKey in previewJson.Tables) {
                                 if (Object.hasOwnProperty.call(previewJson.Tables, tableKey)) {
                                     const table = previewJson.Tables[tableKey];
                                     var indx = Object.keys(previewJson.Tables).indexOf(tableKey);
