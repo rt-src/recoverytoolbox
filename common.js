@@ -16,8 +16,8 @@ const BaseUrl = "https://access.recoverytoolbox.com/online";
 // const API = "http://localhost:28747";
 const API = "https://api.recoverytoolbox.com";
 
-let nextPage = 'result.html';
-let nextBasePage = BaseUrl;
+var nextPage = 'result.html';
+var nextBasePage = BaseUrl;
 if (typeof resultUrl !== 'undefined') {
     nextPage = resultUrl;
 }

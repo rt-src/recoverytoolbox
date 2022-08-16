@@ -9,7 +9,7 @@ var fileForUpload = null;
 var site = "access"
 var reviewInfo = {}
 
-let gaCode = 'G-C9KGLPG7VW';
+var gaCode = 'G-C9KGLPG7VW';
 if (typeof gacode !== 'undefined') {
     gaCode = gacode;
 }
@@ -79,7 +79,7 @@ validateApi = (event, v, dzClosure) => {
         return false;
     }
 
-    let langVar = 'en';
+    var langVar = 'en';
     if (typeof lang !== 'undefined') {
         langVar = lang;
     }
@@ -357,7 +357,7 @@ function sendComplete(file) {
 
     var email = document.getElementById('email').value;
 
-    let langVar = 'en';
+    var langVar = 'en';
     if (typeof lang !== 'undefined') {
         langVar = lang;
     }
