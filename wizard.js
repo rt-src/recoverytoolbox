@@ -152,7 +152,7 @@ validateApi = (event, v, dzClosure) => {
     request.send(JSON.stringify(data));
 }
 
-const submit_file_click = function (e) {
+const submit_file_click = function (event) {
     if (debug) {
         console.log('submit_file');
     }
@@ -170,7 +170,7 @@ const submit_file_click = function (e) {
     } else {
         sfb.disabled = true;
     }
-    validateApi(e, v, dzClosure);
+    validateApi(event, v, dzClosure);
     event.preventDefault();
     event.stopPropagation();
 };
