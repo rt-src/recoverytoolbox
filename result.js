@@ -36,16 +36,23 @@ getResultInfo = (fileId) => {
             }
 
             if (resp) {
-                document.getElementById('src-filename').innerText = resp.SourceName;
-                document.getElementById('res-size').innerText = resp.Size;
-                document.getElementById('src-size').innerText = resp.SourceSize;
-                document.getElementById('report').innerText = resp.ReportContent;
 
+                if (typeof document.getElementById('src-filename').innerText !== 'undefined') {
+                    document.getElementById('src-filename').innerText = resp.SourceName;
+                    document.getElementById('res-size').innerText = resp.Size;
+                    document.getElementById('src-size').innerText = resp.SourceSize;
+                    document.getElementById('report').innerText = resp.ReportContent;
+                } else if (typeof document.getElementById('src-filename').textContent !== 'undefined') {
+                    document.getElementById('src-filename').textContent = resp.SourceName;
+                    document.getElementById('res-size').textContent = resp.Size;
+                    document.getElementById('src-size').textContent = resp.SourceSize;
+                    document.getElementById('report').textContent = resp.ReportContent;
+                }
                 document.getElementById('rt-next-button')
                     .addEventListener("click", () => {
                         if (typeof gtag !== 'undefined') {
                             gtag("event", "click_next_button_to_payment_page");
-                        }                        
+                        }
                         window.location = `${nextBasePage}/payment.html?id=${fileId}`;
                     }, false);
 
@@ -57,7 +64,7 @@ getResultInfo = (fileId) => {
                         .addEventListener("click", () => {
                             if (typeof gtag !== 'undefined') {
                                 gtag("event", "click_demo_download_button");
-                            }                             
+                            }
                             var filename = `${API}/repair/demo/${fileId}/1`;
                             window.open(filename, "_blank");
                         }, false);
@@ -139,7 +146,7 @@ getResultInfo = (fileId) => {
                             .addEventListener("click", () => {
                                 if (typeof gtag !== 'undefined') {
                                     gtag("event", "click_preview_button");
-                                }                                
+                                }
                                 document.getElementsByClassName("fancybox")[0].click();
                             }, false);
                     } else if (resp.Type == ".ost" && resp.PreviewJson != "") {
@@ -172,7 +179,7 @@ getResultInfo = (fileId) => {
                             .addEventListener("click", () => {
                                 if (typeof gtag !== 'undefined') {
                                     gtag("event", "click_preview_button");
-                                }                                
+                                }
                                 document.getElementsByClassName("fancybox")[0].click();
                             }, false);
                     } else {
@@ -196,7 +203,7 @@ getResultInfo = (fileId) => {
                             .addEventListener("click", () => {
                                 if (typeof gtag !== 'undefined') {
                                     gtag("event", "click_preview_button");
-                                }                                
+                                }
                                 document.getElementsByClassName("fancybox")[0].click();
                             }, false);
                     }
@@ -207,7 +214,7 @@ getResultInfo = (fileId) => {
                         .addEventListener("click", () => {
                             if (typeof gtag !== 'undefined') {
                                 gtag("event", "click_next_button_to_download_page");
-                            }                              
+                            }
                             window.location = `${nextBasePage}/download.html?id=${fileId}`;
                         }, false);
                 }
