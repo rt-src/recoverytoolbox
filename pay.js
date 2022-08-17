@@ -193,7 +193,7 @@ if ($_GET && $_GET["id"]) {
 page_load_complete = () => {
     var btn = document.getElementById("card-ya");
     if (btn) {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (event) => {
 
             if (typeof gtag !== 'undefined') {
                 gtag("event", "click_yandex_payment");
