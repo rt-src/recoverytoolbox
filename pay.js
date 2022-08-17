@@ -19,22 +19,38 @@ getFileInfo = (fileId) => {
                 // lang = resp.lang;
                 var amountPpEl = document.getElementById('amount_pp');
                 if (amountPpEl) {
-                    amountPpEl.innerText = resp.amount_pp ? resp.amount_pp : '';
+                    if (typeof amountPpEl.innerText !== 'undefined') {
+                        amountPpEl.innerText = resp.amount_pp ? resp.amount_pp : '';
+                    } else if (typeof amountPpEl.textContent !== 'undefined') {
+                        amountPpEl.textContent = resp.amount_pp ? resp.amount_pp : '';
+                    }
                 }
-
-                if (amountPpEl && amountPpEl.innerText != '') {
-                    var val = amountPpEl.innerText.split(" ");
-                    var valNum = Number(val);
-                    gtag("event", "generate_lead", {
-                       currency: "USD",
-                       value: valNum
-                     });                 
-               }
-
+                if (amountPpEl) {
+                    if (typeof amountPpEl.innerText !== 'undefined' && amountPpEl.innerText != '') {
+                        var val = amountPpEl.innerText.split(" ");
+                        var valNum = Number(val);
+                        gtag("event", "generate_lead", {
+                            currency: "USD",
+                            value: valNum
+                        });
+                    } else if (typeof amountPpEl.textContent !== 'undefined' && amountPpEl.textContent != '') {
+                        var val = amountPpEl.textContent.split(" ");
+                        var valNum = Number(val);
+                        gtag("event", "generate_lead", {
+                            currency: "USD",
+                            value: valNum
+                        });
+                    }
+                }
                 var amountYaEl = document.getElementById('amount_ya');
                 if (amountYaEl) {
-                    amountYaEl.innerText = resp.amount_ya ? resp.amount_ya : '';
+                    if (typeof amountYaEl.innerText !== 'undefined') {
+                        amountYaEl.innerText = resp.amount_ya ? resp.amount_ya : '';
+                    } else if (typeof amountYaEl.textContent !== 'undefined') {
+                        amountYaEl.textContent = resp.amount_ya ? resp.amount_ya : '';
+                    }
                 }
+                
                 if (resp.amount_ya) {
                     var parent = document.getElementById("amount_ya").parentElement.parentElement.parentElement;
                     if (parent.hasChildNodes()) {
@@ -124,14 +140,23 @@ getPayLinkForYa = (fileId) => {
             }
 
             var amountYaEl = document.getElementById('amount_ya');
-            if (amountYaEl && amountYaEl.innerText != '') {
-                 var val = amountYaEl.innerText.split(" ");
-                 var valNum = Number(val);
-                 gtag("event", "generate_lead", {
-                    currency: "RUB",
-                    value: valNum
-                  });                 
-            }            
+            if (amountYaEl){
+                if (typeof amountYaEl.innerText !== 'undefined' && amountYaEl.innerText != '') {
+                    var val = amountYaEl.innerText.split(" ");
+                    var valNum = Number(val);
+                    gtag("event", "generate_lead", {
+                       currency: "RUB",
+                       value: valNum
+                     }); 
+                } else if (typeof amountYaEl.textContent !== 'undefined' && amountYaEl.textContent != ''){
+                    var val = amountYaEl.textContent.split(" ");
+                    var valNum = Number(val);
+                    gtag("event", "generate_lead", {
+                       currency: "RUB",
+                       value: valNum
+                     }); 
+                }
+            }
 
             if (request.response) {
                 var resp = JSON.parse(request.response);
