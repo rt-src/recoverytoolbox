@@ -19,7 +19,7 @@ getFileInfo = (fileId) => {
                 // lang = resp.lang;
                 var amountPpEl = document.getElementById('amount_pp');
                 if (amountPpEl) {
-                    amountPpEl.innerText = resp.amount_pp ?? '';
+                    amountPpEl.innerText = resp.amount_pp ? resp.amount_pp : '';
                 }
 
                 if (amountPpEl && amountPpEl.innerText != '') {
@@ -33,7 +33,7 @@ getFileInfo = (fileId) => {
 
                 var amountYaEl = document.getElementById('amount_ya');
                 if (amountYaEl) {
-                    amountYaEl.innerText = resp.amount_ya ?? '';
+                    amountYaEl.innerText = resp.amount_ya ? resp.amount_ya : '';
                 }
                 if (resp.amount_ya) {
                     var parent = document.getElementById("amount_ya").parentElement.parentElement.parentElement;
@@ -97,10 +97,10 @@ getPayLink = (fileId) => {
 
                 var cardPpEl = document.getElementById('card-pp');
                 if (cardPpEl) {
-                    cardPpEl.href = resp.pay_pro ?? '';
+                    cardPpEl.href = resp.pay_pro ? resp.pay_pro : '';
                 } else {
-                    document.getElementsByClassName('credit-card')[0].href = resp.pay_pro ?? '';
-                    document.getElementById("link-text").href = resp.pay_pro ?? '';
+                    document.getElementsByClassName('credit-card')[0].href = resp.pay_pro ? resp.pay_pro : '';
+                    document.getElementById("link-text").href = resp.pay_pro ? resp.pay_pro : '';
                 }
             }
         }
