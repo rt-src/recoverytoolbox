@@ -32,8 +32,8 @@ function validateEmail() {
         failMessage = "Incorrect email";
     }
     return {
-        ok,
-        failMessage
+        ok:ok,
+        failMessage:failMessage
     }
 }
 
