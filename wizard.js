@@ -14,7 +14,7 @@ if (typeof gacode !== 'undefined') {
     gaCode = gacode;
 }
 
-validateEmail = () => {
+function validateEmail() {
     if (debug) {
         console.log("validateEmail");
     }
