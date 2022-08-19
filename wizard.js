@@ -37,7 +37,7 @@ function validateEmail() {
     }
 }
 
-validateFile = (file) => {
+function validateFile(file) {
     if (debug) {
         console.log("validateFile");
     }
@@ -53,12 +53,12 @@ validateFile = (file) => {
         failMessage = "Not Allowed type";
     }
     return {
-        ok,
-        failMessage
+        ok:ok,
+        failMessage:failMessage
     }
 }
 
-validateApi = (event, v, dzClosure) => {
+function validateApi(event, v, dzClosure) {
     if (debug) {
         console.log("validateApi", fileForUpload);
     }
@@ -409,7 +409,7 @@ function removeHash() {
     }
 }
 
-addGA4 = () => {
+function addGA4() {
     if (debug) {
         console.log("load GA");
     }
@@ -449,7 +449,7 @@ if (but && but.length > 0) {
 // getMicroJsonInfo();
 // }
 
-page_load_complete = () => {
+function page_load_complete() {
 
     var loc = window.location;
     if (loc.hash.startsWith('#/repair/result/')) {
