@@ -216,7 +216,6 @@ if (typeof Dropzone !== 'undefined' && Dropzone != null) {
         // maxFilesize: 1024 * 1024 * 1024 * 1024 * 1024, // 1Tb
 
         init: function () {
-            console.log("start init dropzone");
             dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
             // for Dropzone to process the queue (instead of default form behavior):
             document.getElementById("submit_file").addEventListener("click", submit_file_click);
@@ -224,7 +223,7 @@ if (typeof Dropzone !== 'undefined' && Dropzone != null) {
             user_email.addEventListener("change", inputEmail);
             user_email.addEventListener('input', inputEmail);
             user_email.addEventListener('propertychange', inputEmail);
-            console.log("finish init dropzone");
+
         },
         // previewTemplate: "",
         // addedfile: (...args) => {
