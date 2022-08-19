@@ -145,7 +145,7 @@ function validateApi(event, v, dzClosure) {
         }
     }
 
-    request.open("POST", `${API}/api/repair/validate`, true);
+    request.open("POST", API + "/api/repair/validate", true);
     request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     request.onreadystatechange = reqReadyStateChange;
     request.onload = errorState;
