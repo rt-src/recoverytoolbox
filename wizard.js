@@ -14,7 +14,7 @@ if (typeof gacode !== 'undefined') {
     gaCode = gacode;
 }
 
-validateEmail = () => {
+function validateEmail() {
     if (debug) {
         console.log("validateEmail");
     }
@@ -32,12 +32,12 @@ validateEmail = () => {
         failMessage = "Incorrect email";
     }
     return {
-        ok,
-        failMessage
+        ok:ok,
+        failMessage:failMessage
     }
 }
 
-validateFile = (file) => {
+function validateFile(file) {
     if (debug) {
         console.log("validateFile");
     }
@@ -53,12 +53,12 @@ validateFile = (file) => {
         failMessage = "Not Allowed type";
     }
     return {
-        ok,
-        failMessage
+        ok:ok,
+        failMessage:failMessage
     }
 }
 
-validateApi = (event, v, dzClosure) => {
+function validateApi(event, v, dzClosure) {
     if (debug) {
         console.log("validateApi", fileForUpload);
     }
@@ -145,7 +145,7 @@ validateApi = (event, v, dzClosure) => {
         }
     }
 
-    request.open("POST", `${API}/api/repair/validate`, true);
+    request.open("POST", API + "/api/repair/validate", true);
     request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     request.onreadystatechange = reqReadyStateChange;
     request.onload = errorState;
@@ -216,7 +216,6 @@ if (typeof Dropzone !== 'undefined' && Dropzone != null) {
         // maxFilesize: 1024 * 1024 * 1024 * 1024 * 1024, // 1Tb
 
         init: function () {
-            console.log("start init dropzone");
             dzClosure = this; // Makes sure that 'this' is understood inside the functions below.
             // for Dropzone to process the queue (instead of default form behavior):
             document.getElementById("submit_file").addEventListener("click", submit_file_click);
@@ -224,7 +223,7 @@ if (typeof Dropzone !== 'undefined' && Dropzone != null) {
             user_email.addEventListener("change", inputEmail);
             user_email.addEventListener('input', inputEmail);
             user_email.addEventListener('propertychange', inputEmail);
-            console.log("finish init dropzone");
+
         },
         // previewTemplate: "",
         // addedfile: (...args) => {
@@ -410,7 +409,7 @@ function removeHash() {
     }
 }
 
-addGA4 = () => {
+function addGA4() {
     if (debug) {
         console.log("load GA");
     }
@@ -450,7 +449,7 @@ if (but && but.length > 0) {
 // getMicroJsonInfo();
 // }
 
-page_load_complete = () => {
+function page_load_complete() {
 
     var loc = window.location;
     if (loc.hash.startsWith('#/repair/result/')) {
