@@ -26,14 +26,14 @@ function validateEmail() {
         failMessage = "Empty email";
     }
 
-    var re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    var re = /[a-z0-9!#$%&'*+/=?^_"{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_"{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
     if (!re.test(String(email).toLowerCase())) {
         ok = false;
         failMessage = "Incorrect email";
     }
     return {
-        ok:ok,
-        failMessage:failMessage
+        ok: ok,
+        failMessage: failMessage
     }
 }
 
@@ -53,8 +53,8 @@ function validateFile(file) {
         failMessage = "Not Allowed type";
     }
     return {
-        ok:ok,
-        failMessage:failMessage
+        ok: ok,
+        failMessage: failMessage
     }
 }
 
@@ -200,7 +200,7 @@ const inputEmail = function (e) {
 if (typeof Dropzone !== 'undefined' && Dropzone != null) {
 
     var myDropzone = new Dropzone("#uploader", {
-        url: `${API}/api/files/upload-chunk`,
+        url: API + "/api/files/upload-chunk",
         paramName: "file",
         chunking: true,
         timeout: 180000,
@@ -384,7 +384,7 @@ function sendComplete(file) {
         }
     }
 
-    request.open("POST", `${API}/api/files/finished`);
+    request.open("POST", API + "/api/files/finished");
     request.onreadystatechange = reqReadyStateChange;
     request.send(formData);
 }
@@ -456,7 +456,7 @@ function page_load_complete() {
         var guidMatch = loc.hash.match('([0-9a-fA-F]{8}\-([0-9a-fA-F]{4}\-){3}[0-9a-fA-F]{12})');
         if (guidMatch && guidMatch.length > 0) {
             var guid = guidMatch[1];
-            window.location = `${nextBasePage}/result.html?id=${guid}`;
+            window.location = nextBasePage + "/result.html?id=" + guid;
         }
     }
 }
