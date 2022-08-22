@@ -1,4 +1,4 @@
-confirm = (fileId) => {
+function confirm(fileId) {
     if (debug) {
         console.log("confirm", fileForUpload);
     }
@@ -27,12 +27,12 @@ confirm = (fileId) => {
         }
     }
 
-    request.open("POST", `${API}/api/files/confirm/${fileId}`, true);
+    request.open("POST", API + "/api/files/confirm/" + fileId, true);
     request.onreadystatechange = reqReadyStateChange;
     request.send();
 }
 
-getInfo = (fileId) => {
+function getInfo(fileId) {
     if (debug) {
         console.log("getInfo", fileForUpload);
     }
@@ -59,9 +59,9 @@ getInfo = (fileId) => {
 
                     document.getElementById('progress-text').innerText = 100;
                     if (resp.success) {
-                        window.location = `${nextBasePage}/${nextPage}?id=${fileId}`;
+                        window.location = nextBasePage + "/" + nextPage + "?id=" + fileId;
                     } else {
-                        window.location = `${nextBasePage}/fail.html?id=${fileId}`;
+                        window.location = nextBasePage + "/fail.html?id="+ fileId;
                     }
                 } else {
                     setTimeout(getInfo, 1000, fileId);
@@ -70,7 +70,7 @@ getInfo = (fileId) => {
         }
     }
 
-    request.open("GET", `${API}/api/repair/info/${fileId}`, true);
+    request.open("GET", API + "/api/repair/info/" + fileId, true);
     // request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
     request.onreadystatechange = reqReadyStateChange;
     request.send();
