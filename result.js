@@ -123,7 +123,7 @@ function getResultInfo(fileId) {
                                             } else if (typeof row === "string") {
                                                 var rTr = row.trim();
                                                 var words = rTr.split(" ");
-                                                if (words.length > 0 && Number.parseInt(words[0])) {
+                                                if (words.length > 0 && parseInt(words[0])) {
                                                     rowString = '<tr><th scope="row">&nbsp;</th><td class="text-center" colspan="' + colCnt + '"><strong><span class="color-light-green-dark fs-1">' + words[0] + '</span> rows more...</strong></td><th scope="row">&nbsp;</th></tr>';
                                                 }
                                                 tablePreviewContent += rowString;
