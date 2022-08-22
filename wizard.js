@@ -226,6 +226,74 @@ const acceptfunction = function(file, done) {
     removeHash();
 }
 
+const paramfunction = function(file, request, chunk) {
+    if (chunk) {
+        return {
+            '_chunkNumber': chunk.index,
+            '_uuid': chunk.file.upload.uuid,
+            'sessionId': chunk.file.upload.uuid,
+            'email': document.getElementById('email').value,
+            '_chunkSize': chunkSize,
+            // '_currentChunkSize':,                
+            '_totalSize': file[0].upload.total,
+        };
+    } else {
+        return {
+            '_chunkNumber': 0,
+            '_uuid': file[0].upload.uuid
+        };
+    }
+}
+
+const processingfunction = function (file) {
+    if (debug) {
+        console.log('sending', file);
+    }
+
+    if (typeof gtag !== 'undefined') {
+        gtag("event", "uploading_file_start");
+    }
+}
+
+const sendingfunction = function(file, xhr, formData) {
+    if (debug) {
+        console.log('sending', file, xhr, formData);
+    }
+
+    document.getElementById("step_1").setAttribute("hidden", true);
+    document.getElementById("step_2").removeAttribute("hidden");
+
+}
+
+const uploadprogressfunction = function(file, loaded, total) {
+    if (debug) {
+        console.log("uploadprogress", loaded, total);
+    }
+    if (loaded > 100) {
+        return;
+    }
+    setRepairProgress(loaded);
+}
+
+const successfunction = function(file) {
+    if (debug) {
+        console.log("success", file);
+    }
+    sendComplete(file);
+}
+
+const completefunction = function(...args) {
+    if (debug) {
+        console.log("complete", args);
+    }
+    myDropzone.removeAllFiles(true);
+}
+
+const maxfilesexceededfunction = function(files) {
+    myDropzone.removeAllFiles(true);
+    myDropzone.addFile(files);
+}
+
 if (typeof Dropzone !== 'undefined' && Dropzone != null) {
 
     var myDropzone = new Dropzone("#uploader", {
@@ -254,84 +322,14 @@ if (typeof Dropzone !== 'undefined' && Dropzone != null) {
             user_email.addEventListener('propertychange', inputEmail);
 
         },
-        // previewTemplate: "",
-        // addedfile: (...args) => {
-        //     if (debug) {
-        //         console.log("addedfile", args);
-        //     }
-        // },
         accept: acceptfunction,
-        params: (file, request, chunk) => {
-            if (chunk) {
-                return {
-                    '_chunkNumber': chunk.index,
-                    '_uuid': chunk.file.upload.uuid,
-                    'sessionId': chunk.file.upload.uuid,
-                    'email': document.getElementById('email').value,
-                    '_chunkSize': chunkSize,
-                    // '_currentChunkSize':,                
-                    '_totalSize': file[0].upload.total,
-                };
-            } else {
-                return {
-                    '_chunkNumber': 0,
-                    '_uuid': file[0].upload.uuid
-                };
-            }
-        },
-
-        processing: (file) => {
-            if (debug) {
-                console.log('sending', file);
-            }
-
-            if (typeof gtag !== 'undefined') {
-                gtag("event", "uploading_file_start");
-            }
-        },
-        sending: (file, xhr, formData) => {
-            if (debug) {
-                console.log('sending', file, xhr, formData);
-            }
-
-            //TODO: return
-            // document.getElementById("offline").setAttribute("hidden", true);
-            document.getElementById("step_1").setAttribute("hidden", true);
-            document.getElementById("step_2").removeAttribute("hidden");
-            // document.getElementById('progress-text').innerText = "Uploading file";
-
-            // document.getElementById("s1").classList.add("d-none", "d-lg-block");
-            // document.getElementById("s2").classList.remove("d-none", "d-lg-block");
-            // // document.getElementById("s3").classList.remove("d-none","d-lg-block");
-            // document.getElementById("sl2").classList.add("active");
-            // document.getElementById("c2").classList.add("active");
-
-        },
-        uploadprogress: (file, loaded, total) => {
-            if (debug) {
-                console.log("uploadprogress", loaded, total);
-            }
-            if (loaded > 100) {
-                return;
-            }
-            setRepairProgress(loaded);
-        },
-        success: (file) => {
-            if (debug) {
-                console.log("success", file);
-            }
-            sendComplete(file);
-        },
-        complete: (...args) => {
-            if (debug) {
-                console.log("complete", args);
-            }
-            myDropzone.removeAllFiles(true);
-        },
-        maxfilesexceeded: (files) => {
-            myDropzone.removeAllFiles(true);
-            myDropzone.addFile(files);
-        },
+        params: paramfunction ,
+        processing: processingfunction ,
+        sending: sendingfunction,
+        uploadprogress: uploadprogressfunction,
+        success: successfunction,
+        complete: completefunction,
+        maxfilesexceeded: maxfilesexceededfunction,
 
         dictDefaultMessage: ''
     });
