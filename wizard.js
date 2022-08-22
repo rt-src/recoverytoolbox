@@ -282,10 +282,10 @@ const successfunction = function(file) {
     sendComplete(file);
 }
 
-const completefunction = function(...args) {
-    if (debug) {
-        console.log("complete", args);
-    }
+const completefunction = function(args) {
+    // if (debug) {
+    //     console.log("complete", args);
+    // }
     myDropzone.removeAllFiles(true);
 }
 
