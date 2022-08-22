@@ -3,7 +3,7 @@ if (typeof lang !== 'undefined') {
     langVar = lang;
 }
 
-getFileInfo = (fileId) => {
+function getFileInfo(fileId) {
     if (debug) {
         console.log("getInfo", fileId);
     }
@@ -16,6 +16,9 @@ getFileInfo = (fileId) => {
                 console.log('getFileInfo reqReadyStateChange', request, resp);
             }
             if (resp) {
+                if (typeof resp.is_payed !== 'undefined' && resp.is_payed == true){
+                    window.location = nextBasePage + "/download.html?id=" + fileId;
+                }
                 // lang = resp.lang;
                 var amountPpEl = document.getElementById('amount_pp');
                 if (amountPpEl) {
@@ -90,12 +93,12 @@ getFileInfo = (fileId) => {
             }
         }
     }
-    request.open("GET", `${API}/api/repair/files/${langVar}/${fileId}/amount`, true);
+    request.open("GET", API + "/api/repair/files/" + langVar + "/" + fileId + "/amount", true);
     request.onreadystatechange = reqReadyStateChange;
     request.send();
 }
 
-getPayLink = (fileId) => {
+function getPayLink(fileId) {
     if (debug) {
         console.log("getPayLink", fileId);
     }
@@ -121,12 +124,12 @@ getPayLink = (fileId) => {
             }
         }
     }
-    request.open("GET", `${API}/api/repair/files/${langVar}/${fileId}/pay_link`, true);
+    request.open("GET", API + "/api/repair/files/" + langVar + "/" + fileId +"/pay_link", true);
     request.onreadystatechange = reqReadyStateChange;
     request.send();
 }
 
-getPayLinkForYa = (fileId) => {
+function getPayLinkForYa(fileId) {
     if (debug) {
         console.log("getPayLinkForYa", fileId);
     }
@@ -171,7 +174,7 @@ getPayLinkForYa = (fileId) => {
             }
         }
     }
-    request.open("GET", `${API}/api/repair/files/${langVar}/${fileId}/pay_link_ya`, true);
+    request.open("GET", API + "/api/repair/files/" + langVar + "/" + fileId + "/pay_link_ya", true);
     request.onreadystatechange = reqReadyStateChange;
     request.send();
 }
@@ -190,10 +193,10 @@ if ($_GET && $_GET["id"]) {
     }
 }
 
-page_load_complete = () => {
+function page_load_complete() {
     var btn = document.getElementById("card-ya");
     if (btn) {
-        btn.addEventListener("click", (event) => {
+        btn.addEventListener("click", function(event) {
 
             if (typeof gtag !== 'undefined') {
                 gtag("event", "click_yandex_payment");
