@@ -197,6 +197,35 @@ const inputEmail = function (e) {
     }
 }
 
+const acceptfunction = function(file, done) {
+    if (debug) {
+        console.log('accept', file);
+    }
+
+    if (typeof gtag !== 'undefined') {
+        gtag("event", "select_file");
+    }
+
+    var v = validateFile(file);
+    var email = document.getElementById('email').value;
+    if (v.ok) {
+        if (email) {
+            document.getElementById("submit_file").disabled = false;
+            document.getElementById("submit_file").removeAttribute("hidden");
+        }
+        document.getElementById("check").removeAttribute("hidden");
+        fileForUpload = file;
+        done();
+    } else {
+        document.getElementById("submit_file").disabled = true;
+        // document.getElementById("submit_file").setAttribute("hidden", true);
+        document.getElementById("check").setAttribute("hidden", true);
+        alert(v.failMessage);
+        done(v.failMessage);
+    }
+    removeHash();
+}
+
 if (typeof Dropzone !== 'undefined' && Dropzone != null) {
 
     var myDropzone = new Dropzone("#uploader", {
@@ -231,34 +260,7 @@ if (typeof Dropzone !== 'undefined' && Dropzone != null) {
         //         console.log("addedfile", args);
         //     }
         // },
-        accept: (file, done) => {
-            if (debug) {
-                console.log('accept', file);
-            }
-
-            if (typeof gtag !== 'undefined') {
-                gtag("event", "select_file");
-            }
-
-            var v = validateFile(file);
-            var email = document.getElementById('email').value;
-            if (v.ok) {
-                if (email) {
-                    document.getElementById("submit_file").disabled = false;
-                    document.getElementById("submit_file").removeAttribute("hidden");
-                }
-                document.getElementById("check").removeAttribute("hidden");
-                fileForUpload = file;
-                done();
-            } else {
-                document.getElementById("submit_file").disabled = true;
-                // document.getElementById("submit_file").setAttribute("hidden", true);
-                document.getElementById("check").setAttribute("hidden", true);
-                alert(v.failMessage);
-                done(v.failMessage);
-            }
-            removeHash();
-        },
+        accept: acceptfunction,
         params: (file, request, chunk) => {
             if (chunk) {
                 return {
