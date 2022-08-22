@@ -452,7 +452,9 @@ if (but && but.length > 0) {
 function page_load_complete() {
 
     var loc = window.location;
-    if (loc.hash.startsWith('#/repair/result/')) {
+    const text = '#/repair/result/';
+    if (loc.hash.substring(0,text.length) == text) {
+        // loc.hash.startsWith('#/repair/result/')
         var guidMatch = loc.hash.match('([0-9a-fA-F]{8}\-([0-9a-fA-F]{4}\-){3}[0-9a-fA-F]{12})');
         if (guidMatch && guidMatch.length > 0) {
             var guid = guidMatch[1];
