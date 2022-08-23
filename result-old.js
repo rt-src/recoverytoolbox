@@ -8,7 +8,7 @@ function convertPreviewTreeNodeToHtml(previewTreeNode, topLevel ) {
     html.push("<span>" + previewTreeNode.folderName + "</span>");
     html.push("<ol>");
     if (previewTreeNode.folderItems != "0") {
-        html.push('<li class="normal text-truncate" style="max-width: 171px;">' + reviewTreeNode.folderItems + " items elements</li>")
+        html.push('<li class="normal text-truncate" style="max-width: 171px;">' + previewTreeNode.folderItems + " items elements</li>")
     }
 
     if (previewTreeNode.children instanceof Array && previewTreeNode.children.length > 0) {
