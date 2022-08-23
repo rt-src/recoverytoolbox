@@ -4,7 +4,7 @@ function convertPreviewTreeNodeToHtml(previewTreeNode, topLevel ) {
     if (typeof topLevel == 'undefined') {
         topLevel = false 
     }
-    var html = ['<li class="expanded ' + (topLevel ? "my-3": "") + '>'];
+    var html = ['<li class="expanded ' + (topLevel ? "my-3": "") + '">'];
     html.push("<span>" + previewTreeNode.folderName + "</span>");
     html.push("<ol>");
     if (previewTreeNode.folderItems != "0") {
