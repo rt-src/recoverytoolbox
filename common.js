@@ -4,8 +4,7 @@ if (!Array.prototype.last) {
     };
 };
 
-const BaseUrl = "http://localhost:5400";
-//const BaseUrl = "https://www.repairtoolbox.com";
+const BaseUrl = "https://www.repairtoolbox.com";
 
 const API = BaseUrl + "/api";
 const debug = true;
