@@ -83,7 +83,7 @@ function post() {
         }
     }
 
-    postFormData(`${API}/api/cases/online`, requestSupportStateChange, errorState);
+    postFormData(`${API}/cases/online`, requestSupportStateChange, errorState);
 }
 
 page_load_complete = () => {
